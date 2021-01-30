@@ -51,14 +51,14 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.8.9 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "radarin-O-webapp" #Must be unique in Heroku
+          heroku_app_name: "radarinzerowebapp" #Must be unique in Heroku
           heroku_email: "asw2021zero@gmail.com"
           usedocker: true
           appdir: "webapp"
           docker_build_args: |
             API_URI
         env:
-          API_URI: "https://radarin-0-restapi.herokuapp.com/api"
+          API_URI: "https://radarinzerorestapi.herokuapp.com/api"
   deploy-restapi:
     needs: [e2e-tests]
     runs-on: ubuntu-latest
@@ -67,7 +67,7 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.8.9 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "radarin-0-restapi" #Must be unique in Heroku
+          heroku_app_name: "radarinzerorestapi" #Must be unique in Heroku
           heroku_email: "asw2021zero@gmail.com"
           usedocker: true
           appdir: "restapi"
